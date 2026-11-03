@@ -1,0 +1,145 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #071952;
+    color: white;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sections */
+section {
+    padding: 40px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Hero Section */
+#home {
+    background: linear-gradient(120deg, #071952, #088395);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#home h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #f9a826;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Headings */
+h2 {
+    color: #071952;
+    margin-bottom: 20px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #071952;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Booking Form */
+form {
+    max-width: 500px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Guidelines */
+#guidelines div {
+    background-color: #eef3ff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #071952;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
