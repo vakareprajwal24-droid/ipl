@@ -1,5 +1,3 @@
-
-/* General Styling */
 * {
     margin: 0;
     padding: 0;
@@ -13,153 +11,418 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Bar */
-header {
-    background-color: #071952;
+#home {
+    padding: 18px 24px;
+    background: linear-gradient(120deg, #071952, #088395);
     color: white;
-    padding: 20px;
 }
 
-nav {
+.site-header {
+    max-width: 1240px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
+#home h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    white-space: nowrap;
 }
 
-nav a {
+#home h1 a,
+#home nav a {
     color: white;
     text-decoration: none;
 }
 
-/* Sections */
+#home nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+#home nav a:hover,
+#home nav a:focus-visible {
+    text-decoration: underline;
+}
+
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 10px;
+    color: white;
+    background: transparent;
+    border: 1px solid currentColor;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+}
+
+.hamburger {
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    position: absolute;
+    left: 0;
+    content: "";
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    top: 7px;
+}
+
+main {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
 section {
-    padding: 40px;
     margin: 20px;
+    padding: 40px;
     background-color: white;
     border-radius: 10px;
 }
 
-/* Hero Section */
-#home {
-    background: linear-gradient(120deg, #071952, #088395);
+.hero-section {
+    padding: 72px 40px;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    background: linear-gradient(120deg, #071952, #088395);
 }
 
-#home h1 {
-    font-size: 38px;
-    margin-bottom: 15px;
+.hero-section h2 {
+    color: white;
+    font-size: 2rem;
 }
 
-button {
-    background-color: #f9a826;
-    color: black;
-    border: none;
-    padding: 12px 25px;
-    margin: 15px 5px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Headings */
-h2 {
-    color: #071952;
+.hero-section p {
     margin-bottom: 20px;
 }
 
-/* Tables */
-table {
+.hero-section a {
+    display: inline-block;
+    margin: 6px;
+    padding: 10px 18px;
+    color: #071952;
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #071952;
+}
+
+button,
+.book-btn {
+    display: inline-block;
+    margin: 8px 4px;
+    padding: 11px 20px;
+    color: #111;
+    background-color: #f9a826;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover,
+.book-btn:hover {
+    background-color: #e99410;
+}
+
+.schedule-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.team-filter label {
+    display: block;
+}
+
+input,
+select {
     width: 100%;
-    border-collapse: collapse;
+    margin: 8px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.team-filter select {
+    width: auto;
+    min-width: 240px;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.view-toggle button {
+    margin: 8px 0;
+}
+
+.view-toggle button[aria-pressed="true"] {
+    color: white;
+    background-color: #071952;
+}
+
+.match-results {
+    margin: 8px 0 16px;
+    color: #555;
+}
+
+.match-cards.grid-view {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.match-cards.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.match-card {
+    padding: 22px;
+    background-color: #eef3ff;
+    border: 1px solid #dce5f7;
+    border-radius: 8px;
+}
+
+.match-card[hidden] {
+    display: none;
+}
+
+.match-card h3 {
+    margin-bottom: 8px;
+    color: #071952;
+}
+
+.match-teams {
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.match-details {
+    display: grid;
+    gap: 12px;
+}
+
+.match-details > div {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 10px;
+}
+
+.match-details dt {
+    font-weight: 700;
+}
+
+.match-card .book-btn {
+    margin: 18px 0 0;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrap table {
+    width: 100%;
+    min-width: 560px;
     margin-top: 20px;
+    border-collapse: collapse;
 }
 
 th {
-    background-color: #071952;
     color: white;
+    background-color: #071952;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
 }
 
-/* Booking Form */
 form {
     max-width: 500px;
 }
 
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Guidelines */
-#guidelines div {
-    background-color: #eef3ff;
+#book-ticket aside {
+    margin-top: 24px;
     padding: 20px;
-    margin: 15px 0;
+    background-color: #eef3ff;
     border-radius: 8px;
 }
 
-/* Footer */
-footer {
-    background-color: #071952;
-    color: white;
-    text-align: center;
+#guidelines {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#guidelines h2 {
+    grid-column: 1 / -1;
+}
+
+#guidelines article {
     padding: 20px;
+    background-color: #eef3ff;
+    border-radius: 8px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    section {
-        padding: 20px;
-        margin: 10px;
-    }
-
-    table {
-        font-size: 12px;
-    }
+#guidelines article h3 {
+    margin-bottom: 8px;
+    color: #071952;
 }
-/* Activity 5 - Toast Notification */
+
+footer {
+    padding: 20px;
+    color: white;
+    background-color: #071952;
+    text-align: center;
+}
 
 .toast {
     position: fixed;
-    bottom: 30px;
     right: 30px;
-    background-color: #071952;
-    color: white;
+    bottom: 30px;
+    z-index: 9999;
     padding: 15px 25px;
+    color: white;
+    background-color: #071952;
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
-    z-index: 9999;
 }
 
 .toast.show {
     opacity: 1;
     visibility: visible;
+}
+
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .site-header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #home nav {
+        display: none;
+        flex-basis: 100%;
+    }
+
+    #home nav.is-open {
+        display: block;
+    }
+
+    #home nav ul {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #home nav a {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .match-cards.grid-view {
+        grid-template-columns: 1fr;
+    }
+
+    #guidelines {
+        grid-template-columns: 1fr;
+    }
+
+    #guidelines h2 {
+        grid-column: auto;
+    }
+
+    section {
+        margin: 16px;
+        padding: 28px;
+    }
+}
+
+@media (max-width: 520px) {
+    #home {
+        padding: 14px 16px;
+    }
+
+    #home h1 {
+        font-size: 1.15rem;
+        white-space: normal;
+    }
+
+    section {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .hero-section {
+        padding: 48px 20px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .schedule-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .team-filter select {
+        width: 100%;
+    }
+
+    .match-details > div {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .toast {
+        right: 16px;
+        bottom: 16px;
+        left: 16px;
+        text-align: center;
+    }
 }

@@ -9,20 +9,26 @@
 </head>
 <body>
     <header id="home">
-        <h1>IPL 2026 Ticket Booking</h1>
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="#matches">Matches</a></li>
-                <li><a href="#book-ticket">Book Ticket</a></li>
-                <li><a href="booking.html">Activity 3 Booking Form</a></li>
-                <li><a href="#my-bookings">My Bookings</a></li>
-                <li><a href="#guidelines">Guidelines</a></li>
-            </ul>
-        </nav>
+        <div class="site-header">
+            <h1><a href="#home">IPL 2026 Ticket Booking</a></h1>
+            <button class="nav-toggle" type="button" aria-controls="main-navigation"
+                aria-expanded="false" aria-label="Open navigation">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+            <nav id="main-navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#matches">Matches</a></li>
+                    <li><a href="#book-ticket">Book Ticket</a></li>
+                    <li><a href="booking.html">Activity 3 Booking Form</a></li>
+                    <li><a href="#my-bookings">My Bookings</a></li>
+                    <li><a href="#guidelines">Guidelines</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section aria-labelledby="hero-heading">
+        <section class="hero-section" aria-labelledby="hero-heading">
             <h2 id="hero-heading">Experience The Stadium Energy Live!</h2>
             <p>Watch your favourite teams compete live in IPL 2026.</p>
             <a href="#matches">View Schedule</a>
@@ -52,54 +58,59 @@
 
         <section id="matches" aria-labelledby="schedule-heading">
             <h2 id="schedule-heading">Match Schedule</h2>
-            <label for="team-filter">Filter by Team:</label>
-            <select id="team-filter" name="team-filter">
-                <option value="all">All Teams</option>
-                <option value="csk">Chennai Super Kings</option>
-                <option value="mi">Mumbai Indians</option>
-                <option value="rcb">Royal Challengers Bengaluru</option>
-                <option value="kkr">Kolkata Knight Riders</option>
-            </select>
-
-            <table border="1">
-                <caption>IPL 2026 Match Schedule and Ticket Prices</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Match Number</th>
-                        <th scope="col">Teams</th>
-                        <th scope="col">Date &amp; Time</th>
-                        <th scope="col">Venue</th>
-                        <th scope="col">Ticket Prices</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Match 01</td>
-                        <td>Royal Challengers Bengaluru vs Mumbai Indians</td>
-                        <td>April 5, 2026, 7:30 PM</td>
-                        <td>Wankhede Stadium, Mumbai</td>
-                        <td>General: Rs. 1,500<br>Premium: Rs. 3,500<br>VIP: Rs. 7,500</td>
-                        <td><a href="#book-ticket">Book</a></td>
-                    </tr>
-                    <tr>
-                        <td>Match 02</td>
-                        <td>Chennai Super Kings vs Kolkata Knight Riders</td>
-                        <td>April 6, 2026, 7:30 PM</td>
-                        <td>M. A. Chidambaram Stadium, Chennai</td>
-                        <td>General: Rs. 1,200<br>Premium: Rs. 3,000<br>VIP: Rs. 6,500</td>
-                        <td><a href="#book-ticket">Book</a></td>
-                    </tr>
-                    <tr>
-                        <td>Match 03</td>
-                        <td>Delhi Capitals vs Sunrisers Hyderabad</td>
-                        <td>April 7, 2026, 7:30 PM</td>
-                        <td>Arun Jaitley Stadium, Delhi</td>
-                        <td>General: Rs. 1,000<br>Premium: Rs. 2,500<br>VIP: Rs. 5,500</td>
-                        <td><a href="#book-ticket">Book</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="schedule-controls">
+                <div class="team-filter">
+                    <label for="team-filter">Filter by Team:</label>
+                    <select id="team-filter" name="team-filter">
+                        <option value="all">All Teams</option>
+                        <option value="csk">Chennai Super Kings</option>
+                        <option value="mi">Mumbai Indians</option>
+                        <option value="rcb">Royal Challengers Bengaluru</option>
+                        <option value="kkr">Kolkata Knight Riders</option>
+                        <option value="dc">Delhi Capitals</option>
+                        <option value="srh">Sunrisers Hyderabad</option>
+                    </select>
+                </div>
+                <div class="view-toggle" role="group" aria-label="Match display style">
+                    <button id="grid-view-toggle" type="button" aria-pressed="true">Grid</button>
+                    <button id="list-view-toggle" type="button" aria-pressed="false">List</button>
+                </div>
+            </div>
+            <p id="match-results" class="match-results" role="status" aria-live="polite">
+                Showing 3 matches
+            </p>
+            <div id="match-cards" class="match-cards grid-view">
+                <article class="match-card" data-teams="rcb mi">
+                    <h3>Match 01</h3>
+                    <p class="match-teams">Royal Challengers Bengaluru vs Mumbai Indians</p>
+                    <dl class="match-details">
+                        <div><dt>Date &amp; Time</dt><dd>April 5, 2026, 7:30 PM</dd></div>
+                        <div><dt>Venue</dt><dd>Wankhede Stadium, Mumbai</dd></div>
+                        <div><dt>Ticket Prices</dt><dd>General: Rs. 1,500<br>Premium: Rs. 3,500<br>VIP: Rs. 7,500</dd></div>
+                    </dl>
+                    <a class="book-btn" href="#book-ticket">Book</a>
+                </article>
+                <article class="match-card" data-teams="csk kkr">
+                    <h3>Match 02</h3>
+                    <p class="match-teams">Chennai Super Kings vs Kolkata Knight Riders</p>
+                    <dl class="match-details">
+                        <div><dt>Date &amp; Time</dt><dd>April 6, 2026, 7:30 PM</dd></div>
+                        <div><dt>Venue</dt><dd>M. A. Chidambaram Stadium, Chennai</dd></div>
+                        <div><dt>Ticket Prices</dt><dd>General: Rs. 1,200<br>Premium: Rs. 3,000<br>VIP: Rs. 6,500</dd></div>
+                    </dl>
+                    <a class="book-btn" href="#book-ticket">Book</a>
+                </article>
+                <article class="match-card" data-teams="dc srh">
+                    <h3>Match 03</h3>
+                    <p class="match-teams">Delhi Capitals vs Sunrisers Hyderabad</p>
+                    <dl class="match-details">
+                        <div><dt>Date &amp; Time</dt><dd>April 7, 2026, 7:30 PM</dd></div>
+                        <div><dt>Venue</dt><dd>Arun Jaitley Stadium, Delhi</dd></div>
+                        <div><dt>Ticket Prices</dt><dd>General: Rs. 1,000<br>Premium: Rs. 2,500<br>VIP: Rs. 5,500</dd></div>
+                    </dl>
+                    <a class="book-btn" href="#book-ticket">Book</a>
+                </article>
+            </div>
         </section>
 
         <section id="book-ticket" aria-labelledby="booking-heading">
@@ -161,23 +172,25 @@
 
         <section id="my-bookings" aria-labelledby="bookings-heading">
             <h2 id="bookings-heading">My Ticket Bookings</h2>
-            <table border="1">
-                <caption>Future booking records</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Booking ID</th>
-                        <th scope="col">Match</th>
-                        <th scope="col">Stand</th>
-                        <th scope="col">Tickets</th>
-                        <th scope="col">Total Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="5">No bookings yet.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrap">
+                <table>
+                    <caption>Future booking records</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Booking ID</th>
+                            <th scope="col">Match</th>
+                            <th scope="col">Stand</th>
+                            <th scope="col">Tickets</th>
+                            <th scope="col">Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5">No bookings yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section id="guidelines" aria-labelledby="guidelines-heading">
