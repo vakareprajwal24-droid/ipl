@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            width: 400px;
+            max-width: 90%;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            width: auto;
+        }
+
+        fieldset {
+            margin-top: 15px;
+            border: 0;
+            padding: 0;
+        }
+
+        fieldset label {
+            display: inline-block;
+            margin: 5px 15px 0 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .submit {
+            background: darkblue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>IPL Ticket Booking</h1>
+
+    <form action="#" method="get">
+
+        <label for="name">Full Name:</label>
+        <input id="name" type="text" name="name"
+        placeholder="Enter your name"
+        minlength="3" maxlength="30" required>
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email"
+        placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input id="phone" type="tel" name="phone"
+        placeholder="Enter 10 digit number"
+        pattern="[0-9]{10}" required>
+
+        <label for="match">Select Match:</label>
+        <select id="match" name="match" required>
+            <option value="">Select Match</option>
+            <option value="RCB vs MI">RCB vs MI</option>
+            <option value="CSK vs KKR">CSK vs KKR</option>
+            <option value="DC vs SRH">DC vs SRH</option>
+        </select>
+
+        <label for="stand">Stand Category:</label>
+        <select id="stand" name="stand" required>
+            <option value="">Select Stand</option>
+            <option value="General">General</option>
+            <option value="Premium">Premium</option>
+            <option value="VIP">VIP</option>
+        </select>
+
+        <label for="tickets">Number of Tickets:</label>
+        <input id="tickets" type="number" name="tickets"
+        min="1" max="10" required>
+
+        <fieldset>
+            <legend>Match Preference:</legend>
+            <label>
+                <input type="radio" name="preference"
+                value="Day Match" required> Day Match
+            </label>
+            <label>
+                <input type="radio" name="preference"
+                value="Night Match"> Night Match
+            </label>
+        </fieldset>
+
+        <button type="submit" class="submit">
+            Submit
+        </button>
+
+        <button type="reset">
+            Reset
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

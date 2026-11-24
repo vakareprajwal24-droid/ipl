@@ -1,0 +1,56 @@
+
+#include <stdio.h>
+
+void safePrint(void *ptr, int type)
+{
+    if (ptr == NULL)
+    {
+        printf("Pointer is NULL\n");
+    }
+    else if (type == 0)
+    {
+        printf("Value = %d\n", *(int *)ptr);
+    }
+    else
+    {
+        printf("Value = %.2f\n", *(float *)ptr);
+    }
+}
+
+int main()
+{
+    int a[10];
+    float b[10];
+
+    printf("Enter 10 integers:\n");
+    for (int i = 0; i < 10; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter 10 floats:\n");
+    for (int i = 0; i < 10; i++)
+    {
+        scanf("%f", &b[i]);
+    }
+
+    printf("\nInteger values:\n");
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d Address: %p\n", a[i], (void *)&a[i]);
+    }
+
+    printf("\nFloat values:\n");
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%.2f Address: %p\n", b[i], (void *)&b[i]);
+    }
+
+    int num = 42;
+
+    printf("\nSafe Print:\n");
+    safePrint(&num, 0);
+    safePrint(NULL, 0);
+
+    return 0;
+}
